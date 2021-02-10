@@ -66,10 +66,15 @@ class Photosight():
         print("{} files in the link list".format(len(link_)))
         for l in link_:
 
+            # if l not in link[0]:
+            #     l_ = self.pic_dist + l[-18:-11] + "_{}{}{}{}".format(self.day, self.month, self.year, ".jpg")
+            # else:
+            #     l_ = self.pic_dist + l[-18:-11] + "_{}{}{}{}".format(self.day, self.month, self.year, "_adult.jpg")
+
             if l not in link[0]:
-                l_ = self.pic_dist + l[-18:-11] + "_{}{}{}{}".format(self.day, self.month, self.year, ".jpg")
+                l_ = self.pic_dist + l[-18:-11] + "{}".format(".jpg")
             else:
-                l_ = self.pic_dist + l[-18:-11] + "_{}{}{}{}".format(self.day, self.month, self.year, "_adult.jpg")
+                l_ = self.pic_dist + l[-18:-11] + "{}".format("_adult.jpg")
 
             with open(l_, "wb") as f:
                 try:
